@@ -1,4 +1,4 @@
-module gitee.com/gjing1st/easondb
+module github.com/gjing1st/easondb
 
 go 1.17
 
