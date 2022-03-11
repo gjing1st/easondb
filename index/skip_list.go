@@ -37,13 +37,13 @@ type (
 
 // Put 方法存储一个元素至跳表中，如果key已经存在，则会更新其对应的value
 //因此此跳表的实现暂不支持相同的key
-func (skl *SkipList) Put(key []byte, value interface{}) *Element {
+func (skl *SkipList) Put(key []byte, value interface{})  {
 	var element *Element
 	prev := skl.prevNodes(key)
 	element = prev[0].next[0]
 	if element != nil && bytes.Compare(element.key, key) == 0 {
 		element.value = value
-		return element
+		return
 	}
 	//else if bytes.Compare(element.key, key) > 0 {
 	//	return element
@@ -61,7 +61,7 @@ func (skl *SkipList) Put(key []byte, value interface{}) *Element {
 
 	}
 	skl.Len++
-	return element
+	return
 }
 
 //找到key对应的前一个节点索引的信息

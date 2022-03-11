@@ -16,6 +16,7 @@ func Encode(key,value interface{})(keyByte,valueByte []byte){
 	valueByte = gconv.Bytes(value)
 	return
 }
+
 // EncodeKey
 // @description: 将key转为字节
 // @param:

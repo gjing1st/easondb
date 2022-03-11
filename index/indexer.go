@@ -1,7 +1,7 @@
 package index
 
 import (
-	"github.com/gjing1st/easondb/model"
+	"gitee.com/gjing1st/easondb/model"
 )
 
 type Indexer struct {

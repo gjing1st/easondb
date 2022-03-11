@@ -9,11 +9,12 @@ import (
 var dbPath = "E:\\db_test\\easondb"
 
 func InitDb() *EasonDB {
-	config := DefaultConfig()
-	config.DbPath = dbPath
-	config.BlockSize =  1024
+	//config := DefaultConfig()
+	//config.DbPath = dbPath
+	//config.BlockSize =  1024
+	DbConfig.SetDbPath(dbPath)
 
-	db, err := Run(config)
+	db, err := Run()
 	//db, err := Run(Config{})
 	if err != nil {
 		log.Fatal(err)

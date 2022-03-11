@@ -1,8 +1,8 @@
 package easondb
 
 import (
-	"github.com/gjing1st/easondb/index"
-	"github.com/gjing1st/easondb/model"
+	"gitee.com/gjing1st/easondb/index"
+	"gitee.com/gjing1st/easondb/model"
 	"io"
 )
 

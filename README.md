@@ -1,7 +1,8 @@
 # easondb
 
 #### 介绍
-1. go语言开发内存数据库(类似redis)
+1. go语言开发内存数据库(类似redis)  
+   github地址：https://github.com/gjing1st/easondb
 2. 参考数据库：nedb  
    github: https://github.com/louischatriot/nedb  
    简介：https://www.w3cschool.cn/nedbintro/nedbintro-eqsm27mb.html
@@ -17,11 +18,11 @@
 
 #### 安装教程
 ```shell 
-go get -u -v github.com/gjing1st/easondb
+go get -u -v gitee.com/gjing1st/easondb
 ```
 推荐使用 `go.mod`:
 ```
-require github.com/gjing1st/easondb latest
+require gitee.com/gjing1st/easondb latest
 ```
 #### 使用说明
 参考根目录下string_test.go文件进行数据库初始化以及读写操作

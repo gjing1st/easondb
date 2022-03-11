@@ -160,7 +160,6 @@ func (df *DBFile) Read(offset int64) (e *Entity, err error) {
 			return
 		}
 	}
-
 	return
 }
 

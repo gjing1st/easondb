@@ -2,8 +2,8 @@ package easondb
 
 import (
 	"errors"
-	"github.com/gjing1st/easondb/index"
-	"github.com/gjing1st/easondb/model"
+	"gitee.com/gjing1st/easondb/index"
+	"gitee.com/gjing1st/easondb/model"
 	"sync"
 )
 
@@ -127,35 +127,35 @@ func (db *EasonDB) buildStringIndex(index *index.Indexer) {
 // @email: gjing1st@gmail.com
 // @date: 2021/12/20 11:17
 // @success:
-func Run(config Config) (db *EasonDB, err error) {
+func Run() (db *EasonDB, err error) {
 	//func Run() (db *EasonDB, err error) {
-	var c Config
-	if config == c {
-		config = DefaultConfig()
-	}
+	//var c Config
+	//if config == c {
+	//	config = DefaultConfig()
+	//}
 	activeFileId := uint32(0)
 	activeFile := &model.DBFile{}
 	var archivedFiles ArchivedFiles
 
-	switch config.DataMode {
+	switch DbConfig.DataMode {
 	case Redis:
-		archivedFiles, activeFileId, err = model.LoadFile(config.DbPath)
+		archivedFiles, activeFileId, err = model.LoadFile(DbConfig.DbPath)
 		if err != nil {
 			return nil, err
 		}
-		activeFile, err = model.OpenDBFile(config.DbPath, activeFileId)
+		activeFile, err = model.OpenDBFile(DbConfig.DbPath, activeFileId)
 	case Mysql:
 		//TODO 运行模式
 
 	}
-	meta, _ := model.ReadMeta(config.DbPath)
+	meta, _ := model.ReadMeta(DbConfig.DbPath)
 	activeFile.Offset = meta.ActiveWriteOffset
 	db = &EasonDB{
 		activeFile:    activeFile,
 		activeFileId:  activeFileId,
 		archivedFiles: archivedFiles,
 		strIndex:      NewStrIndex(),
-		config:        config,
+		config:        *DbConfig,
 		meta:          meta,
 	}
 
