@@ -18,11 +18,11 @@
 
 #### 安装教程
 ```shell 
-go get -u -v gitee.com/gjing1st/easondb
+go get -u -v github.com/gjing1st/easondb
 ```
 推荐使用 `go.mod`:
 ```
-require gitee.com/gjing1st/easondb latest
+require github.com/gjing1st/easondb latest
 ```
 #### 使用说明
 参考根目录下string_test.go文件进行数据库初始化以及读写操作

@@ -1,9 +1,9 @@
 package easondb
 
 import (
-	"gitee.com/gjing1st/easondb/index"
-	"gitee.com/gjing1st/easondb/model"
-	"gitee.com/gjing1st/easondb/utils"
+	"github.com/gjing1st/easondb/index"
+	"github.com/gjing1st/easondb/model"
+	"github.com/gjing1st/easondb/utils"
 	"sync"
 )
 
